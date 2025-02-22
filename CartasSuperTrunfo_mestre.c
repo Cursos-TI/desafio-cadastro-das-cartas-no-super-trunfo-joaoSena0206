@@ -114,13 +114,21 @@ int main()
     // Compara os atributos e mostra o ganhador na tela
     printf("Agora será feita uma comparação entre as duas cartas\n\n");
 
-    printf("População: Carta %d venceu (%d)\n", (populacao_carta1 > populacao_carta2) * 1 + (populacao_carta1 < populacao_carta2) * 2, populacao_carta1 > populacao_carta2);
-    printf("Área: Carta %d venceu (%d)\n", (area_carta1 > area_carta2) * 1 + (area_carta1 < area_carta2) * 2, area_carta1 > area_carta2);
-    printf("PIB: Carta %d venceu (%d)\n", (pib_carta1 > pib_carta2) * 1 + (pib_carta1 < pib_carta2) * 2, pib_carta1 > pib_carta2);
-    printf("Pontos Turísticos: Carta %d venceu (%d)\n", (pontosTuristicos_carta1 > pontosTuristicos_carta2) * 1 + (pontosTuristicos_carta1 < pontosTuristicos_carta2) * 2, pontosTuristicos_carta1 > pontosTuristicos_carta2);
-    printf("Densidade Populacional: Carta %d venceu (%d)\n", (densidadePopulacional_carta1 < densidadePopulacional_carta2) * 1 + (densidadePopulacional_carta1 > densidadePopulacional_carta2) * 2, densidadePopulacional_carta1 < densidadePopulacional_carta2);
-    printf("PIB per Capita: Carta %d venceu (%d)\n", (pibCapita_carta1 > pibCapita_carta2) * 1 + (pibCapita_carta1 < pibCapita_carta2) * 2, pibCapita_carta1 > pibCapita_carta2);
-    printf("Super Poder: Carta %d venceu (%d)\n", (poder_carta1 > poder_carta2) * 1 + (poder_carta1 < poder_carta2) * 2, poder_carta1 > poder_carta2);
+    int ganhadorPopulacao = (populacao_carta1 > populacao_carta2) + (populacao_carta1 < populacao_carta2) * 2;
+    int ganhadorArea = (area_carta1 > area_carta2) + (area_carta1 < area_carta2) * 2;
+    int ganhadorPib = (pib_carta1 > pib_carta2) + (pib_carta1 < pib_carta2) * 2;
+    int ganhadorPontosTuristicos = (pontosTuristicos_carta1 > pontosTuristicos_carta2) + (pontosTuristicos_carta1 < pontosTuristicos_carta2) * 2;
+    int ganhadorDensidade = (densidadePopulacional_carta1 < densidadePopulacional_carta2) + (densidadePopulacional_carta1 > densidadePopulacional_carta2) * 2;
+    int ganhadorPibCapita = (pibCapita_carta1 > pibCapita_carta2) + (pibCapita_carta1 < pibCapita_carta2) * 2;
+    int ganhadorPoder = (poder_carta1 > poder_carta2) + (poder_carta1 < poder_carta2) * 2;
+
+    printf("População: Carta %d venceu (%d)\n", ganhadorPopulacao, populacao_carta1 > populacao_carta2);
+    printf("Área: Carta %d venceu (%d)\n", ganhadorArea, area_carta1 > area_carta2);
+    printf("PIB: Carta %d venceu (%d)\n", ganhadorPib, pib_carta1 > pib_carta2); 
+    printf("Pontos Turísticos: Carta %d venceu (%d)\n", ganhadorPontosTuristicos, pontosTuristicos_carta1 > pontosTuristicos_carta2);
+    printf("Densidade Populacional: Carta %d venceu (%d)\n", ganhadorDensidade, densidadePopulacional_carta1 < densidadePopulacional_carta2);
+    printf("PIB per Capita: Carta %d venceu (%d)\n", ganhadorPibCapita, pibCapita_carta1 > pibCapita_carta2);
+    printf("Super Poder: Carta %d venceu (%d)\n", ganhadorPoder, poder_carta1 > poder_carta2);
 
     return 0;
 }
